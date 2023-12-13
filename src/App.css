@@ -1,0 +1,12 @@
+.App {
+  width: 100%;
+  overflow: hidden;
+  font-size: 16px;
+  display: flex;
+}
+
+@media (max-width: 600px) {
+  .App {
+    flex-direction: column;
+  }
+}
