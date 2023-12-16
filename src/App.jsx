@@ -3,6 +3,7 @@ import Sidebar from './components/Sidebar';
 import Main from './components/Main';
 import { useEffect, useState } from 'react';
 import uuid from 'react-uuid';
+import { ChakraProvider } from '@chakra-ui/react';
 
 function App() {
   const [notes, setNotes] = useState(
@@ -61,7 +62,7 @@ function App() {
 
   //サイドバーとメインを表示
   return (
-    <>
+    <ChakraProvider>
       <div className="App">
         <Sidebar
           onAddNote={onAddNote}
@@ -72,7 +73,7 @@ function App() {
         />
         <Main activeNote={getActiveNote()} onUpdateNote={onUpdateNote} />
       </div>
-    </>
+    </ChakraProvider>
   );
 }
 

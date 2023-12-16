@@ -1,5 +1,6 @@
 import React from 'react';
 import './Sidebar.css';
+import { Button, Heading } from '@chakra-ui/react';
 
 const Sidebar = ({
   onAddNote,
@@ -14,8 +15,12 @@ const Sidebar = ({
   return (
     <div className="app-sidebar">
       <div className="app-sidebar-header">
-        <h1>ノート</h1>
-        <button onClick={onAddNote}>追加</button>
+        <Heading as="h1" size="lg">
+          ノート
+        </Heading>
+        <Button colorScheme="blue" onClick={onAddNote}>
+          追加
+        </Button>
       </div>
       <div className="app-sidebar-notes">
         {sortedNotes.map((note) => (
@@ -26,7 +31,9 @@ const Sidebar = ({
           >
             <div className="app-sidebar-title">
               <strong>{note.title}</strong>
-              <button onClick={() => onDeleteNote(note.id)}>削除</button>
+              <Button colorScheme="red" onClick={() => onDeleteNote(note.id)}>
+                削除
+              </Button>
             </div>
             <p>{note.content}</p>
             <small>
