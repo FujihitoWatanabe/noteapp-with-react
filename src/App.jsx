@@ -18,8 +18,10 @@ function App() {
 
   //選択しているノートをメイン側で表示
   useEffect(() => {
-    setActiveNote(notes[0].id);
-  }, []);
+    if (notes.length > 0) {
+      setActiveNote(notes[0].id);
+    }
+  }, [notes]);
 
   //追加されるノートの初期表示
   const onAddNote = () => {
@@ -57,7 +59,7 @@ function App() {
     setNotes(updatedNotesArray);
   };
 
-  //サイドバーを表示
+  //サイドバーとメインを表示
   return (
     <>
       <div className="App">
