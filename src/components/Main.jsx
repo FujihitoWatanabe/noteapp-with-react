@@ -1,6 +1,7 @@
 import React from 'react';
 import './Main.css';
 import Markdown from 'react-markdown';
+import { Heading } from '@chakra-ui/react';
 
 const Main = ({ activeNote, onUpdateNote }) => {
   //編集されるノートの情報
@@ -41,7 +42,12 @@ const Main = ({ activeNote, onUpdateNote }) => {
         ></textarea>
       </div>
       <div className="app-main-note-preview">
-        <h1 className="preview-title">{activeNote.title}</h1>
+        <Heading as="h2" size="lg" className="preview-title">
+          ノートプレビュー
+        </Heading>
+        <Heading as="h3" size="md" className="preview-title">
+          {activeNote.title}
+        </Heading>
         <Markdown className="markdown-preview">{activeNote.content}</Markdown>
       </div>
     </div>
